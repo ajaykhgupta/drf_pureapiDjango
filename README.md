@@ -10,7 +10,7 @@ pure Django api using serializer
 import json
 python_data = {'name':'sonam', 'roll':101}
 json_data = json.dumps(python_data)
-print(json_data)
+print(json_data)http://127.0.0.1:8000/
 O/P : {"name":"sonam", "roll" : 101}
 ```
 
