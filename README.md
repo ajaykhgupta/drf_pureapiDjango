@@ -44,5 +44,43 @@ O/P: {'name':'sonam', 'roll':101}
 - from rest_frameowkr.renderers import JSONRenderer 
 - json_data = JSONRenderer().render(serializer.data)
 
+# Serialization
 
+- COMPLEX DATA TYPE --> (serialization) --> PYTHON NATIVE DATATYPE --> (render into json) --> JSON DATA 
 
+# De-serialization
+
+- JSON DATA -->(parse data)--> PYTHON NATIVE DATATYPE --> (De-Serialization)--> COMPLEX DATATYPE
+
+# BytemIO()
+```
+import io
+stream = io.BytemIO(json_data)
+
+```
+# JSONPARSER()
+
+this is used to parse json data to pytohn native datatype
+
+```
+from rest_framework.parser import JSONParser
+parsed_data = JSONParser().parser(stream)
+
+```
+# De serialization
+
+- It allows parsed data to be converted back into complex types, after first validating the incoming data.
+
+- Steps
+- Creating Serializer Object
+```
+serializer = StudentSerializer(data = parsed_data)
+```
+- Validated Data 
+```
+serializer.is_valid()
+```
+- if serializer is valid then we get the results in serializer.validated_data
+- if not the we get serializer.errors
+
+# demo
