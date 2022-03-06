@@ -42,9 +42,9 @@ def get_data(id = None):
 
 def post_data():
     data = {
-        'name':'Sonali',
-        'roll':50,
-        'city':'Bandra'
+        'name':'mohan',
+        'roll':22,
+        'city':'kalyan'
     }
     headers = {'content-Type': 'application/json'}
     # dumps python to json
@@ -72,7 +72,8 @@ def update_data():
 
 
 def delete_data():
-    data = {'id' : 5}
+    
+    data = {'id' : 10}
     json_data = json.dumps(data)
     headers = {'content-Type': 'application/json'}
     r = requests.delete(url=URL, headers=headers ,data=json_data)
