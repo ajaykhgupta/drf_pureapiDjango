@@ -14,7 +14,7 @@ print(json_data)http://127.0.0.1:8000/
 O/P : {"name":"sonam", "roll" : 101}
 ```
 
-- loads(data) -> This is use to parse json string
+- loads(data) -> This is use to parse json string(json to python)
 
 - Ex:
 ```
